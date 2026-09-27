@@ -1,0 +1,354 @@
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 24px 40px;
+  animation: pageFadeIn 0.5s ease;
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.page-hero {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.page-hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 12px;
+}
+
+.page-hero p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+
+.page-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.content-block {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 30px;
+  transition: var(--transition);
+}
+
+.content-block:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-glow);
+}
+
+.content-block h2 {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  font-weight: 700;
+  position: relative;
+  padding-left: 16px;
+}
+
+.content-block h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 70%;
+  background: var(--accent-gradient);
+  border-radius: 2px;
+}
+
+.content-block p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+.content-block a {
+  color: var(--accent-2);
+  font-weight: 500;
+}
+
+.styled-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 8px;
+}
+
+.styled-list li {
+  position: relative;
+  padding: 8px 0 8px 24px;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.styled-list li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--accent-2);
+  font-weight: bold;
+}
+
+.styled-list li strong {
+  color: var(--text-primary);
+}
+
+/* Contact page */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.contact-info h2 {
+  font-size: 1.4rem;
+  margin-bottom: 14px;
+  color: var(--text-primary);
+}
+
+.contact-info > p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 26px;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.info-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(108, 92, 231, 0.12);
+  border: 1px solid rgba(108, 92, 231, 0.25);
+  border-radius: 10px;
+  color: var(--accent-2);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.info-item strong {
+  display: block;
+  color: var(--text-primary);
+  font-size: 0.92rem;
+  margin-bottom: 2px;
+}
+
+.info-item p {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+}
+
+.contact-form {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  letter-spacing: 0.3px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.15);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  background: var(--accent-gradient);
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  letter-spacing: 0.3px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(108, 92, 231, 0.4);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page {
+    padding: 40px 20px 30px;
+  }
+
+  .content-block {
+    padding: 22px 20px;
+  }
+}
+
+/* ---------- FAQ Panel (Contact page) ---------- */
+.faq-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+
+.faq-panel h2 {
+  font-size: 1.4rem;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.faq-item {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--bg-secondary);
+  transition: var(--transition);
+}
+
+.faq-item:hover {
+  border-color: var(--border-hover);
+}
+
+.faq-item.open {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.12);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-align: left;
+  transition: var(--transition);
+}
+
+.faq-question:hover {
+  color: var(--accent-2);
+}
+
+.faq-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(108, 92, 231, 0.15);
+  color: var(--accent-2);
+  font-size: 1rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.faq-item.open .faq-icon {
+  background: var(--accent-gradient);
+  color: white;
+  transform: rotate(180deg);
+}
+
+/* Smooth height animation using grid trick */
+.faq-answer-wrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-item.open .faq-answer-wrap {
+  grid-template-rows: 1fr;
+}
+
+.faq-answer {
+  overflow: hidden;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.7;
+  padding: 0 18px;
+  transition: padding 0.35s ease;
+}
+
+.faq-item.open .faq-answer {
+  padding: 0 18px 16px;
+}
+
+.faq-footer {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.faq-footer a {
+  color: var(--accent-2);
+  font-weight: 600;
+}
+
+/* Widen contact grid a bit for the FAQ side */
+@media (min-width: 769px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1.35fr;
+  }
+}
