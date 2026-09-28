@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import QRCodeStyling from 'qr-code-styling';
 import ColorPicker from './ColorPicker';
 import '../styles/qrcode.css';
