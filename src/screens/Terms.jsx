@@ -1,9 +1,17 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import '../styles/pages.css';
 
 function Terms() {
   return (
     <div className="page">
+      <SEO
+        title="Terms & Conditions"
+        description="ScanMe terms and conditions. Free, unrestricted use of our browser-based QR code generator."
+        path="/terms"
+        keywords="ScanMe terms, terms of service, qr generator terms"
+      />
+
       <div className="page-hero">
         <h1>Terms & <span className="gradient-text">Conditions</span></h1>
         {/* <p>Last updated: January 2025</p> */}

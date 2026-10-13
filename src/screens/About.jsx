@@ -1,9 +1,27 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import '../styles/pages.css';
 
 function About() {
+
+  const aboutJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: 'About ScanMe',
+    url: 'https://scan-me-qr.netlify.app/about',
+    description: 'The story behind ScanMe — a free, privacy-first QR code generator.',
+  };
+  
   return (
     <div className="page">
+      <SEO
+        title="About Us"
+        description="Learn about ScanMe — our mission to make beautiful, branded QR codes free and accessible to everyone, without compromising your privacy."
+        path="/about"
+        keywords="about ScanMe, qr code generator company, free qr tool"
+        jsonLd={aboutJsonLd}
+      />
+
       <div className="page-hero">
         <h1>About <span className="gradient-text">Us</span></h1>
         <p>Our story, mission, and the people behind Scan Me.</p>

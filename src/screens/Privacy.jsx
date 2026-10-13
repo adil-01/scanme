@@ -1,9 +1,17 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import '../styles/pages.css';
 
 function Privacy() {
   return (
     <div className="page">
+      <SEO
+        title="Privacy Policy"
+        description="ScanMe privacy policy — we never collect, store, or transmit your data. Everything runs locally in your browser."
+        path="/privacy"
+        keywords="ScanMe privacy policy, qr generator privacy"
+      />
+
       <div className="page-hero">
         <h1>Privacy <span className="gradient-text">Policy</span></h1>
         {/* <p>Last updated: January 2025</p> */}

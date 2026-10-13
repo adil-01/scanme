@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import '../styles/pages.css';
+import SEO from '../components/SEO';
 
 const FAQS = [
   {
-    q: 'Is QRForge really free?',
+    q: 'Is ScanMe really free?',
     a: 'Yes — 100% free, forever. No account, no credit card, no watermarks, no premium tiers. Every feature you see is available to everyone.',
   },
   {
@@ -27,8 +28,33 @@ function Contact() {
     setOpenIndex(openIndex === i ? -1 : i);
   };
 
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: FAQS.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a },
+    })),
+  };
+
+  const contactJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: 'Contact ScanMe',
+    url: 'https://scan-me-qr.netlify.app/contact',
+  };
+
   return (
     <div className="page">
+      <SEO
+        title="Contact Us"
+        description="Get in touch with the ScanMe team. Questions, feature requests, bug reports, or just saying hi — we read everything."
+        path="/contact"
+        keywords="contact ScanMe, qr code generator support"
+        jsonLd={[contactJsonLd, faqJsonLd]}
+      />
+
       <div className="page-hero">
         <h1>Contact <span className="gradient-text">Us</span></h1>
         <p>Questions, feedback, or just want to say hi? We're all ears.</p>
